@@ -26,7 +26,7 @@ describe('Testing Product CRUD operations', () => {
         // Intercept post
         cy.intercept('POST', '**/Product/AddProduct', request => {
             expect(request).property('body').to.have.property('name', 'Test 01')
-            expect(request).property('body').to.have.property('price', '11')
+            expect(request).property('body').to.have.property('price', '12')
             request.reply()
         })
         cy.get('button[type=submit]').click()
